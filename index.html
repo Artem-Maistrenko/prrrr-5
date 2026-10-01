@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практическая работа №3 — Интерактивный интерфейс</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="header__container">
+            <div class="header__brand">
+                <svg class="header__logo" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#2563eb"/>
+                            <stop offset="100%" stop-color="#10b981"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="6" y="6" width="28" height="28" rx="7"
+                          transform="rotate(45 20 20)" fill="url(#logoGrad)"/>
+                    <path d="M12 15 L16 26 L20 18 L24 26 L28 15"
+                          stroke="#fff" stroke-width="2.4"
+                          stroke-linecap="round" stroke-linejoin="round"
+                          fill="none"/>
+                </svg>
+                <span class="header__title">WebProject</span>
+            </div>
+
+            <button class="header__burger burger" id="burger" aria-label="Открыть меню">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+
+            <nav class="header__nav nav" id="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#hero" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="#catalog" class="nav__link">Каталог</a></li>
+                    <li class="nav__item"><a href="#features" class="nav__link">Преимущества</a></li>
+                    <li class="nav__item"><a href="#gallery" class="nav__link">Галерея</a></li>
+                    <li class="nav__item"><a href="#articles" class="nav__link">Статьи</a></li>
+                    <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
+                    <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                    </svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="header__button button button--accent" id="openModalBtn">Оставить заявку</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <!-- Hero -->
+        <section class="hero" id="hero">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Современные решения для вашего бизнеса</h1>
+                    <p class="hero__description">
+                        Создавайте адаптивные и высокопроизводительные веб-приложения с использованием передовых технологий верстки HTML5, CSS3 и методологии БЭМ.
+                    </p>
+                    <button class="hero__button button button--primary" id="openModalBtn2">Начать работу</button>
+                </div>
+                <div class="hero__image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Разработка веб-приложений" class="hero__image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Каталог -->
+        <section class="catalog" id="catalog">
+            <div class="catalog__container">
+                <h2 class="catalog__title">Каталог проектов</h2>
+                <div class="catalog__grid">
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="Аналитика" class="card__image">
+                        <div class="card__body">
+                            <h3 class="card__title">Веб-аналитика</h3>
+                            <p class="card__description">Инструменты для отслеживания и анализа метрик вашего приложения в реальном времени.</p>
+                            <button class="card__button button button--outline">Подробнее</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=500&q=80" alt="Интерфейсы" class="card__image">
+                        <div class="card__body">
+                            <h3 class="card__title">UI/UX Дизайн</h3>
+                            <p class="card__description">Современные макеты и интерактивные прототипы для удобства пользователей.</p>
+                            <button class="card__button button button--outline">Подробнее</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500&q=80" alt="Безопасность" class="card__image">
+                        <div class="card__body">
+                            <h3 class="card__title">Кибербезопасность</h3>
+                            <p class="card__description">Надежная защита персональных данных и инфраструктуры веб-сервиса.</p>
+                            <button class="card__button button button--outline">Подробнее</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=500&q=80" alt="Разработка" class="card__image">
+                        <div class="card__body">
+                            <h3 class="card__title">Frontend-верстка</h3>
+                            <p class="card__description">Чистый и поддерживаемый код с применением Flexbox, CSS Grid и БЭМ.</p>
+                            <button class="card__button button button--outline">Подробнее</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=500&q=80" alt="Оптимизация" class="card__image">
+                        <div class="card__body">
+                            <h3 class="card__title">Оптимизация кода</h3>
+                            <p class="card__description">Ускорение загрузки страниц и повышение производительности сервиса.</p>
+                            <button class="card__button button button--outline">Подробнее</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=500&q=80" alt="Поддержка" class="card__image">
+                        <div class="card__body">
+                            <h3 class="card__title">Техподдержка 24/7</h3>
+                            <p class="card__description">Постоянный мониторинг и оперативное решение возникающих вопросов.</p>
+                            <button class="card__button button button--outline">Подробнее</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="features" id="features">
+            <div class="features__container">
+                <h2 class="features__title">Наши преимущества</h2>
+                <div class="features__grid">
+                    <div class="feature-item">
+                        <div class="feature-item__icon">⚡</div>
+                        <h3 class="feature-item__title">Высокая скорость</h3>
+                        <p class="feature-item__text">Минимальное время отклика за счет легкой верстки без лишних библиотек.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item__icon">📱</div>
+                        <h3 class="feature-item__title">Адаптивность</h3>
+                        <p class="feature-item__text">Интерфейс идеально подстраивается под экраны смартфонов, планшетов и ПК.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-item__icon">🧩</div>
+                        <h3 class="feature-item__title">Модульность БЭМ</h3>
+                        <p class="feature-item__text">Легкое масштабирование и повторное использование компонентов кода.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Галерея изображений -->
+        <section class="gallery" id="gallery">
+            <div class="gallery__container">
+                <h2 class="gallery__title">Галерея работ</h2>
+                <div class="gallery__main">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+                         alt="Главное изображение"
+                         class="gallery__main-image"
+                         id="galleryMain">
+                </div>
+                <div class="gallery__thumbs" id="galleryThumbs">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&q=80" alt="Превью 1" class="gallery__thumb gallery__thumb--active" data-full="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=300&q=80" alt="Превью 2" class="gallery__thumb" data-full="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=300&q=80" alt="Превью 3" class="gallery__thumb" data-full="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=300&q=80" alt="Превью 4" class="gallery__thumb" data-full="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=300&q=80" alt="Превью 5" class="gallery__thumb" data-full="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80">
+                </div>
+            </div>
+        </section>
+
+        <!-- Статьи -->
+        <section class="articles" id="articles">
+            <div class="articles__container">
+                <h2 class="articles__title">Полезные статьи</h2>
+                <div class="articles__grid">
+                    <article class="article-card">
+                        <div class="article-card__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Современная верстка" class="article-card__image">
+                        </div>
+                        <div class="article-card__body">
+                            <span class="article-card__date">12 Мая 2026</span>
+                            <h3 class="article-card__title">Как освоить БЭМ и перестать путаться в CSS-классах</h3>
+                            <p class="article-card__description">Подробное руководство по структурированию стилей в крупных проектах.</p>
+                            <button class="article-card__button button button--outline">Читать статью</button>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-card__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Адаптивный дизайн" class="article-card__image">
+                        </div>
+                        <div class="article-card__body">
+                            <span class="article-card__date">28 Апреля 2026</span>
+                            <h3 class="article-card__title">Flexbox vs CSS Grid: Что и когда использовать?</h3>
+                            <p class="article-card__description">Сравнение двух мощных технологий верстки.</p>
+                            <button class="article-card__button button button--outline">Читать статью</button>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <div class="article-card__image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Оптимизация сайтов" class="article-card__image">
+                        </div>
+                        <div class="article-card__body">
+                            <span class="article-card__date">15 Апреля 2026</span>
+                            <h3 class="article-card__title">Оптимизация производительности веб-страниц</h3>
+                            <p class="article-card__description">Разбираем способы ускорения загрузки сайта.</p>
+                            <button class="article-card__button button button--outline">Читать статью</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ / Аккордеон -->
+        <section class="faq" id="faq">
+            <div class="faq__container">
+                <h2 class="faq__title">Часто задаваемые вопросы</h2>
+                <div class="faq__list">
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            Что такое адаптивная верстка?
+                            <span class="faq-item__icon">+</span>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Адаптивная верстка — это подход, при котором макет сайта автоматически подстраивается под размер экрана устройства пользователя: смартфона, планшета или ПК.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            Зачем нужна методология БЭМ?
+                            <span class="faq-item__icon">+</span>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>БЭМ (Блок-Элемент-Модификатор) помогает структурировать CSS-классы, делает код понятным, предсказуемым и легко масштабируемым в больших проектах.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            Чем отличается Flexbox от CSS Grid?
+                            <span class="faq-item__icon">+</span>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Flexbox — одномерная система для выравнивания элементов в строку или колонку. CSS Grid — двумерная система, позволяющая одновременно управлять строками и столбцами.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-item__question">
+                            Как JavaScript взаимодействует со страницей?
+                            <span class="faq-item__icon">+</span>
+                        </button>
+                        <div class="faq-item__answer">
+                            <p>Через DOM (Document Object Model). JavaScript может находить элементы, изменять их содержимое, стили, классы и реагировать на события пользователя.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer" id="contacts">
+        <div class="footer__container">
+            <div class="footer__info">
+                <span class="footer__title">WebProject</span>
+                <p class="footer__text">Учебный проект по разработке адаптивных веб-интерфейсов.</p>
+            </div>
+            <div class="footer__contacts">
+                <h4 class="footer__subtitle">Контакты</h4>
+                <p class="footer__text">Email: info@example.com</p>
+                <p class="footer__text">Тел: +7 (999) 000-00-00</p>
+            </div>
+            <div class="footer__socials">
+                <h4 class="footer__subtitle">Мы в соцсетях</h4>
+                <div class="footer__links">
+                    <a href="#" class="footer__link">Telegram</a>
+                    <a href="#" class="footer__link">VKontakte</a>
+                    <a href="#" class="footer__link">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 WebProject. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <button class="to-top" id="toTop" aria-label="Наверх">↑</button>
+
+    <!-- Модальное окно -->
+    <div class="modal" id="modal">
+        <div class="modal__overlay" id="modalOverlay"></div>
+        <div class="modal__window" role="dialog" aria-modal="true">
+            <button class="modal__close" id="modalClose" aria-label="Закрыть">✕</button>
+            <h3 class="modal__title">Оставить заявку</h3>
+            <p class="modal__subtitle">Заполните форму, и мы свяжемся с вами в ближайшее время.</p>
+            <form class="modal__form" id="callbackForm" novalidate>
+                <label class="modal__label">
+                    Ваше имя
+                    <input type="text" name="name" class="modal__input" placeholder="Иван" required>
+                </label>
+                <label class="modal__label">
+                    Телефон
+                    <input type="tel" name="phone" class="modal__input" placeholder="+7 (___) ___-__-__" required>
+                </label>
+                <label class="modal__label">
+                    Комментарий
+                    <textarea name="comment" class="modal__input modal__input--textarea" placeholder="Кратко опишите задачу"></textarea>
+                </label>
+                <button type="submit" class="button button--primary modal__submit">Отправить</button>
+                <p class="modal__note" id="formNote"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
